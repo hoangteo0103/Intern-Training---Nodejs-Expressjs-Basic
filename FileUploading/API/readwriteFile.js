@@ -15,7 +15,7 @@ app.get('/employee', (req, res) => {
 
 app.post('/employee', (req, res) => {
   const employeeData = req.body;
-
+  
   fs.writeFile('./employee.json', JSON.stringify(employeeData), (err) => {
     if (err) {
       return res.status(500).send({ message: 'Error writing the file' });

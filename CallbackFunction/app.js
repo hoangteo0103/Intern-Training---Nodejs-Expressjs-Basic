@@ -1,37 +1,33 @@
 //Basic example 
 
-function print(num)
+var sum = (a,b ) => {return a+b} ;
+
+function total (a , b, cb) 
 {
-    console.log(num);
-}
-function test(a , cb)
-{
-    cb(a) ; 
-}
-
-test(1 , console.log);
-
-test(1 , print) ; 
-
-
-// Callback function in async
-
-fs = require('fs') ; 
-
-function readFileHandle(err ,data)
-{
-    if(err) {
-        console.log("ERROR") ;
-        return ; 
-    }
-    console.log(data);
+    const c = 10 ;
+    return 10 + cb(a , b); 
 }
 
-fs.readFile("..." , readFileHandle);
-fs.readFile("..." , (err , data ) => {
-    if(err) {
-        console.log("ERROR") ;
-        return ; 
-    }
-    console.log(data);
-})
+console.log(total(3,5 , sum));
+
+// // Callback function in async
+
+// fs = require('fs') ; 
+
+// function readFileHandle(err ,data)
+// {
+//     if(err) {
+//         console.log("ERROR") ;
+//         return ; 
+//     }
+//     console.log(data);
+// }
+
+// fs.readFile("..." , readFileHandle);
+// fs.readFile("..." , (err , data ) => {
+//     if(err) {
+//         console.log("ERROR") ;
+//         return ; 
+//     }
+//     console.log(data);
+// })
